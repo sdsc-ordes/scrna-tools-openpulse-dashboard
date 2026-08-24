@@ -1,0 +1,523 @@
+/* scRNA-seq / spatial transcriptomics tool comparison — main stylesheet.
+ * Every colour comes from the --op-* tokens (tokens.css) or the graph-only
+ * data-viz palette; no raw hex outside those files (per frontend-dev §2).
+ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--op-bg);
+	color: var(--op-text-2);
+	font-family: var(--op-font-body);
+	font-size: 16px;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--op-font-heading);
+	color: var(--op-text);
+	line-height: 1.25;
+	letter-spacing: -0.02em;
+	margin: 0;
+}
+
+h1 {
+	font-size: 48px;
+	font-weight: 700;
+}
+h2 {
+	font-size: 32px;
+	font-weight: 700;
+}
+h3 {
+	font-size: 24px;
+	font-weight: 600;
+}
+h4 {
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: var(--op-blue-light);
+	text-decoration: none;
+}
+a:hover {
+	color: var(--op-blue);
+}
+
+.mono {
+	font-family: var(--op-font-mono);
+}
+
+.op-lg {
+	font-size: 18px;
+}
+.op-sm {
+	font-size: 14px;
+}
+.op-caption {
+	font-size: 12px;
+}
+.op-micro {
+	font-size: 11px;
+}
+.muted {
+	color: var(--op-text-muted);
+}
+.faint {
+	color: var(--op-text-faint);
+}
+.uppercase {
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+/* --- Layout -------------------------------------------------------- */
+
+.op-container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.op-page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.op-main {
+	flex: 1 1 auto;
+	padding: 48px 0 80px;
+}
+
+.op-section {
+	margin-top: 56px;
+}
+.op-section:first-child {
+	margin-top: 0;
+}
+
+.op-label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--op-text-muted);
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	margin-bottom: 12px;
+}
+.op-label .ring {
+	font-weight: 700;
+}
+
+/* --- Attribution bar (frontend-dev §7, spec: openpulse-dark-theme §7.4) - */
+
+.op-attribution {
+	background: var(--op-surface-2);
+	border-bottom: 1px solid var(--op-border);
+}
+.op-attribution .op-container {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-size: 11px;
+	color: var(--op-text-muted);
+}
+.op-attribution a {
+	color: var(--op-blue-light);
+}
+.op-attribution a:hover {
+	color: var(--op-blue);
+}
+
+/* --- Header --------------------------------------------------------- */
+
+.op-header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: var(--op-surface);
+	border-bottom: 1px solid var(--op-border);
+}
+.op-header .op-container {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+.op-wordmark {
+	font-family: var(--op-font-heading);
+	font-weight: 700;
+	font-size: 20px;
+	color: var(--op-text);
+}
+.op-wordmark span {
+	color: var(--op-blue-light);
+}
+.op-nav {
+	display: flex;
+	align-items: center;
+	gap: 28px;
+	font-size: 14px;
+}
+.op-nav a {
+	color: var(--op-text-muted);
+	transition: color 0.15s;
+}
+.op-nav a:hover,
+.op-nav a[aria-current='page'] {
+	color: var(--op-blue-light);
+}
+
+/* --- Footer ---------------------------------------------------------- */
+
+.op-footer {
+	background: var(--op-footer-bg);
+	border-top: 1px solid var(--op-footer-border);
+	margin-top: 80px;
+}
+.op-footer .op-container {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.op-footer p {
+	color: var(--op-text-muted);
+	font-size: 13px;
+	max-width: 560px;
+}
+.op-footer a {
+	color: var(--op-blue-light);
+}
+
+/* --- Cards (deviation 2: bordered) ----------------------------------- */
+
+.op-card {
+	background: var(--op-surface);
+	border: 1px solid var(--op-border);
+	border-radius: 0;
+	padding: 24px;
+}
+.op-card--elevated {
+	background: var(--op-surface-2);
+}
+.op-card-link {
+	display: block;
+	color: inherit;
+	transition: border-color 0.15s;
+}
+.op-card-link:hover {
+	border-color: var(--op-blue);
+}
+.op-card-link:focus-visible {
+	outline: 2px solid var(--op-blue);
+	outline-offset: 2px;
+}
+
+/* --- Stat tiles (landing headline numbers, tool detail headline row) - */
+
+.op-stat-row {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 1px;
+	background: var(--op-border);
+	border: 1px solid var(--op-border);
+}
+.op-stat {
+	background: var(--op-surface);
+	padding: 20px 24px;
+}
+.op-stat .value {
+	font-family: var(--op-font-heading);
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--op-text);
+	line-height: 1.1;
+}
+.op-stat .label {
+	margin-top: 6px;
+	font-size: 12px;
+	color: var(--op-text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+/* --- Compare table ----------------------------------------------------- */
+
+.op-table-scroll {
+	overflow-x: auto;
+	border: 1px solid var(--op-border);
+}
+.op-table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 880px;
+}
+.op-table thead {
+	background: var(--op-surface-2);
+}
+.op-table th {
+	text-align: left;
+	padding: 14px 16px;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--op-text-muted);
+	white-space: nowrap;
+	border-bottom: 1px solid var(--op-border);
+}
+.op-table th[data-sortable] {
+	cursor: pointer;
+	user-select: none;
+}
+.op-table th[data-sortable]:hover {
+	color: var(--op-blue-light);
+}
+.op-table th .sort-arrow {
+	display: inline-block;
+	width: 1em;
+	opacity: 0.5;
+}
+.op-table th[data-sort-active] .sort-arrow {
+	opacity: 1;
+	color: var(--op-blue-light);
+}
+.op-table tbody tr {
+	background: var(--op-surface);
+	border-top: 1px solid var(--op-border);
+	transition: background 0.15s;
+}
+.op-table tbody tr:hover {
+	background: var(--op-surface-2);
+}
+.op-table td {
+	padding: 14px 16px;
+	font-size: 14px;
+	color: var(--op-text-2);
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.op-table td.op-tool-name a {
+	color: var(--op-text);
+	font-weight: 600;
+}
+.op-table td.op-tool-name a:hover {
+	color: var(--op-blue-light);
+}
+.op-table td.op-tool-name .owner {
+	display: block;
+	font-size: 12px;
+	color: var(--op-text-faint);
+	font-weight: 400;
+	margin-top: 2px;
+}
+.op-table td.num {
+	font-family: var(--op-font-mono);
+	text-align: right;
+}
+.op-table .sparkline-cell {
+	width: 140px;
+}
+
+/* --- Badges (deviation 3: sharp, rounded 4px) -------------------------- */
+
+.op-badge {
+	display: inline-flex;
+	align-items: center;
+	border-radius: 4px;
+	padding: 2px 10px;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+.op-badge--neutral {
+	color: var(--op-text-muted);
+	background: rgba(152, 152, 184, 0.1);
+}
+.op-badge--info {
+	color: var(--op-blue-light);
+	background: rgba(138, 148, 201, 0.15);
+}
+.op-badge--warning {
+	color: var(--op-warning);
+	background: rgba(251, 191, 36, 0.12);
+}
+
+/* --- Provenance disclosure (frontend-dev §7, spec: §7.5) --------------- */
+
+.op-provenance {
+	border-top: 1px solid var(--op-border-subtle);
+	margin-top: 20px;
+	padding-top: 12px;
+	font-size: 12px;
+}
+.op-provenance summary {
+	cursor: pointer;
+	color: var(--op-text-faint);
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	list-style: none;
+}
+.op-provenance summary::-webkit-details-marker {
+	display: none;
+}
+.op-provenance summary:hover {
+	color: var(--op-blue-light);
+}
+.op-provenance dl {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 6px 16px;
+	margin: 12px 0 0;
+}
+.op-provenance dt {
+	font-size: 11px;
+	color: var(--op-text-faint);
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	margin: 0;
+}
+.op-provenance dd {
+	font-size: 12px;
+	color: var(--op-text-muted);
+	margin: 0;
+}
+
+/* --- Demographics stacked bar (bus-factor detail) ---------------------- */
+
+.op-stackbar {
+	display: flex;
+	height: 20px;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid var(--op-border);
+}
+.op-stackbar div {
+	height: 100%;
+}
+.op-stackbar-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin-top: 10px;
+	font-size: 12px;
+	color: var(--op-text-muted);
+}
+.op-stackbar-legend .swatch {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 2px;
+	margin-right: 6px;
+	vertical-align: -1px;
+}
+
+/* --- Not-yet-indexed coverage panel ------------------------------------- */
+
+.op-coverage-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1px;
+	background: var(--op-border);
+	border: 1px solid var(--op-border);
+}
+.op-coverage-item {
+	flex: 1 1 260px;
+	background: var(--op-surface);
+	padding: 16px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	min-width: 0;
+}
+.op-coverage-item .name {
+	font-family: var(--op-font-mono);
+	font-size: 13px;
+	color: var(--op-text-2);
+	max-width: 100%;
+	overflow-wrap: break-word;
+}
+.op-coverage-item .name .owner {
+	color: var(--op-text-faint);
+}
+
+/* --- Buttons (minimal use in this app) ---------------------------------- */
+
+.op-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	border-radius: 4px;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	transition: background 0.2s, border-color 0.2s, color 0.2s;
+	border: 1px solid transparent;
+}
+.op-btn--secondary {
+	background: transparent;
+	color: var(--op-text);
+	border-color: var(--op-blue);
+}
+.op-btn--secondary:hover {
+	color: var(--op-blue-light);
+}
+
+/* --- Utility ------------------------------------------------------------ */
+
+.op-grid-2 {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 24px;
+}
+@media (max-width: 800px) {
+	.op-grid-2 {
+		grid-template-columns: 1fr;
+	}
+}
+.op-flex-between {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+}

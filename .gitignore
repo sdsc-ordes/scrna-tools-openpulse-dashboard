@@ -7,6 +7,7 @@
 node_modules/
 src/your-web/build/
 src/your-web/dist/
+src/your-web/src/data/
 
 # Local agent settings + runtime state (personal, not shared in the template)
 .claude/settings.local.json
@@ -16,6 +17,7 @@ src/your-web/dist/
 *.log
 .cache/
 __pycache__/
+.playwright-mcp/
 
 # Editors and OS
 .vscode/*

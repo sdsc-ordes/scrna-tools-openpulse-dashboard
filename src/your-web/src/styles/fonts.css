@@ -1,0 +1,61 @@
+/* Self-contained font loading — no CDN. Files copied at build time from the
+ * @fontsource-variable/space-grotesk, @carrot-kpi/switzer-font, and
+ * @fontsource/jetbrains-mono npm packages into dist/fonts/ (scripts/build.mjs).
+ * Latin subset only — sufficient for this dashboard's content.
+ */
+
+@font-face {
+	font-family: 'Space Grotesk Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 300 700;
+	src: url('./fonts/space-grotesk-latin-wght-normal.woff2') format('woff2-variations');
+}
+
+@font-face {
+	font-family: 'Switzer';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src: url('./fonts/switzer-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Switzer';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500;
+	src: url('./fonts/switzer-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Switzer';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 600;
+	src: url('./fonts/switzer-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Switzer';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 700;
+	src: url('./fonts/switzer-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src: url('./fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500;
+	src: url('./fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');
+}
