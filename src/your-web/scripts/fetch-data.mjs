@@ -191,6 +191,13 @@ async function main() {
 		const crReviews = val(m.cr_reviews);
 		const prDataAvailable = closureRatio !== null || crReviews !== null;
 
+		// Advanced CHAOSS metrics added after a live 35-metric coverage check
+		// across the 16 well-covered repos (see DASHBOARD.md) — each has real,
+		// non-flat values for this tool category, unlike licenses_declared,
+		// technical_fork, bot_activity, and cr_accepted/cr_declined, which were
+		// checked at the same time and dropped for being flat or redundant.
+		const withSecondary = (metric) => (metric ? { value: val(metric), secondary: metric.secondary ?? null } : null);
+
 		return {
 			slug: slugify(owner, repo),
 			owner,
@@ -213,11 +220,14 @@ async function main() {
 					  }
 					: null,
 				committers: val(m.committers),
+				occasionalContributors: withSecondary(m.occasional_contributors),
 				forks: sparql.forks,
 				license: sparql.license ?? (val(m.license_coverage) === '✗' ? 'None declared' : val(m.license_coverage)),
 				dependencies: val(m.upstream_dependencies),
+				burstiness: withSecondary(m.burstiness),
+				codeLines: withSecondary(m.code_lines),
 				prReview: prDataAvailable
-					? { closureRatio, reviews: crReviews }
+					? { closureRatio, reviews: crReviews, timeToClose: val(m.pr_time_to_close), selfMerge: val(m.self_merge) }
 					: null,
 			},
 		};
@@ -256,9 +266,19 @@ async function main() {
 	const missingStars = tools.filter((t) => t.metrics.stars === null).length;
 	const missingDocs = tools.filter((t) => t.metrics.docsScore === null).length;
 	const withPrData = tools.filter((t) => t.detail.prReview !== null).length;
+	const withBurstiness = tools.filter((t) => t.detail.burstiness !== null).length;
+	const withCodeLines = tools.filter((t) => t.detail.codeLines !== null).length;
+	const withOccasional = tools.filter((t) => t.detail.occasionalContributors !== null).length;
+	const withSelfMerge = tools.filter((t) => t.detail.prReview && t.detail.prReview.selfMerge !== null).length;
+	const withTimeToClose = tools.filter((t) => t.detail.prReview && t.detail.prReview.timeToClose !== null).length;
 	console.log(
 		`Coverage check — busFactor missing: ${missingBusFactor}/16, stars missing: ${missingStars}/16, ` +
 			`docsScore missing: ${missingDocs}/16, PR review data present: ${withPrData}/16 (expect ~12/16)`
+	);
+	console.log(
+		`Advanced metrics coverage — burstiness: ${withBurstiness}/16, codeLines: ${withCodeLines}/16, ` +
+			`occasionalContributors: ${withOccasional}/16 (expect 16/16 each); self-merge: ${withSelfMerge}/16, ` +
+			`PR time-to-close: ${withTimeToClose}/16 (expect ~11-12/16, same PR-tracker subset)`
 	);
 }
 
