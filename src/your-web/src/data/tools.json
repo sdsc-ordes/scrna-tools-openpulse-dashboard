@@ -1,0 +1,1578 @@
+{
+  "fetchedAt": "2026-08-26T08:17:07.375Z",
+  "source": "Open Pulse (openpulse.epfl.ch) — CHAOSS API + SPARQL",
+  "tools": [
+    {
+      "slug": "vitessce-vitessce",
+      "owner": "vitessce",
+      "repo": "vitessce",
+      "githubUrl": "https://github.com/vitessce/vitessce",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "38",
+        "stars": 263,
+        "docsScore": "3/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 20
+          },
+          {
+            "date": "2025-10",
+            "value": 11
+          },
+          {
+            "date": "2025-11",
+            "value": 12
+          },
+          {
+            "date": "2025-12",
+            "value": 27
+          },
+          {
+            "date": "2026-01",
+            "value": 10
+          },
+          {
+            "date": "2026-02",
+            "value": 28
+          },
+          {
+            "date": "2026-03",
+            "value": 22
+          },
+          {
+            "date": "2026-04",
+            "value": 26
+          },
+          {
+            "date": "2026-05",
+            "value": 20
+          },
+          {
+            "date": "2026-06",
+            "value": 59
+          },
+          {
+            "date": "2026-07",
+            "value": 47
+          },
+          {
+            "date": "2026-08",
+            "value": 40
+          }
+        ],
+        "commitsTotal": "322"
+      },
+      "detail": {
+        "demographics": {
+          "total": "37",
+          "secondary": "core 5 (80 % of 3985 commits) · recent arrivals 1 (last 90 d) · dormant 32 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 5,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 2,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 1,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 29,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "20",
+        "forks": 69,
+        "license": "MIT License",
+        "dependencies": "6",
+        "prReview": {
+          "closureRatio": "96%",
+          "reviews": "232"
+        }
+      }
+    },
+    {
+      "slug": "haniffalab-webatlas-app",
+      "owner": "haniffalab",
+      "repo": "webatlas-app",
+      "githubUrl": "https://github.com/haniffalab/webatlas-app",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "4",
+        "stars": 15,
+        "docsScore": "1/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 1
+          },
+          {
+            "date": "2025-11",
+            "value": 2
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "3"
+      },
+      "detail": {
+        "demographics": {
+          "total": "4",
+          "secondary": "core 1 (80 % of 196 commits) · recent arrivals 0 (last 90 d) · dormant 4 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 1,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 3,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "5",
+        "forks": 4,
+        "license": "MIT License",
+        "dependencies": "1",
+        "prReview": {
+          "closureRatio": "93%",
+          "reviews": "1"
+        }
+      }
+    },
+    {
+      "slug": "haniffalab-webatlas-pipeline",
+      "owner": "haniffalab",
+      "repo": "webatlas-pipeline",
+      "githubUrl": "https://github.com/haniffalab/webatlas-pipeline",
+      "metrics": {
+        "busFactor": "2",
+        "contributors": "13",
+        "stars": 71,
+        "docsScore": "2/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 21
+          },
+          {
+            "date": "2026-03",
+            "value": 7
+          },
+          {
+            "date": "2026-04",
+            "value": 14
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "42"
+      },
+      "detail": {
+        "demographics": {
+          "total": "11",
+          "secondary": "core 3 (80 % of 767 commits) · recent arrivals 0 (last 90 d) · dormant 10 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 3,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 8,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "12",
+        "forks": 13,
+        "license": "MIT License",
+        "dependencies": "99",
+        "prReview": {
+          "closureRatio": "93%",
+          "reviews": "17"
+        }
+      }
+    },
+    {
+      "slug": "jianhong-scrnaseqapp",
+      "owner": "jianhong",
+      "repo": "scRNAseqApp",
+      "githubUrl": "https://github.com/jianhong/scRNAseqApp",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "3",
+        "stars": 6,
+        "docsScore": "3/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 12
+          },
+          {
+            "date": "2025-10",
+            "value": 2
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 15
+          },
+          {
+            "date": "2026-01",
+            "value": 4
+          },
+          {
+            "date": "2026-02",
+            "value": 30
+          },
+          {
+            "date": "2026-03",
+            "value": 11
+          },
+          {
+            "date": "2026-04",
+            "value": 4
+          },
+          {
+            "date": "2026-05",
+            "value": 9
+          },
+          {
+            "date": "2026-06",
+            "value": 15
+          },
+          {
+            "date": "2026-07",
+            "value": 5
+          },
+          {
+            "date": "2026-08",
+            "value": 4
+          }
+        ],
+        "commitsTotal": "117"
+      },
+      "detail": {
+        "demographics": {
+          "total": "3",
+          "secondary": "core 1 (80 % of 503 commits) · recent arrivals 0 (last 90 d) · dormant 1 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 1,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 1,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 1,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "4",
+        "forks": 4,
+        "license": "None declared",
+        "dependencies": "0",
+        "prReview": null
+      }
+    },
+    {
+      "slug": "lilab-bcb-cirrocumulus",
+      "owner": "lilab-bcb",
+      "repo": "cirrocumulus",
+      "githubUrl": "https://github.com/lilab-bcb/cirrocumulus",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "5",
+        "stars": 100,
+        "docsScore": "2/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 3
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 9
+          }
+        ],
+        "commitsTotal": "19"
+      },
+      "detail": {
+        "demographics": {
+          "total": "5",
+          "secondary": "core 2 (80 % of 2137 commits) · recent arrivals 0 (last 90 d) · dormant 3 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 2,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 1,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 2,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "6",
+        "forks": 18,
+        "license": "BSD 3-Clause \"New\" or \"Revised\" License",
+        "dependencies": "20",
+        "prReview": {
+          "closureRatio": "95%",
+          "reviews": "0"
+        }
+      }
+    },
+    {
+      "slug": "fredpont-spatial",
+      "owner": "FredPont",
+      "repo": "spatial",
+      "githubUrl": "https://github.com/FredPont/spatial",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "2",
+        "stars": 15,
+        "docsScore": "2/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "0"
+      },
+      "detail": {
+        "demographics": {
+          "total": "2",
+          "secondary": "core 2 (80 % of 257 commits) · recent arrivals 0 (last 90 d) · dormant 2 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 2,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 0,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "2",
+        "forks": 1,
+        "license": "GNU General Public License v3.0",
+        "dependencies": "0",
+        "prReview": null
+      }
+    },
+    {
+      "slug": "kanaverse-kana",
+      "owner": "kanaverse",
+      "repo": "kana",
+      "githubUrl": "https://github.com/kanaverse/kana",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "6",
+        "stars": 156,
+        "docsScore": "4/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 2
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 1
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "3"
+      },
+      "detail": {
+        "demographics": {
+          "total": "6",
+          "secondary": "core 2 (80 % of 640 commits) · recent arrivals 0 (last 90 d) · dormant 5 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 2,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 4,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "5",
+        "forks": 19,
+        "license": "MIT License",
+        "dependencies": "0",
+        "prReview": {
+          "closureRatio": "99%",
+          "reviews": "9"
+        }
+      }
+    },
+    {
+      "slug": "pughlab-crescent",
+      "owner": "pughlab",
+      "repo": "crescent",
+      "githubUrl": "https://github.com/pughlab/crescent",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "7",
+        "stars": 9,
+        "docsScore": "3/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "0"
+      },
+      "detail": {
+        "demographics": {
+          "total": "7",
+          "secondary": "core 1 (80 % of 385 commits) · recent arrivals 0 (last 90 d) · dormant 7 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 1,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 6,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "5",
+        "forks": 4,
+        "license": "GNU General Public License v3.0",
+        "dependencies": "0",
+        "prReview": {
+          "closureRatio": "100%",
+          "reviews": "0"
+        }
+      }
+    },
+    {
+      "slug": "biolab-orange3-single-cell",
+      "owner": "biolab",
+      "repo": "orange3-single-cell",
+      "githubUrl": "https://github.com/biolab/orange3-single-cell",
+      "metrics": {
+        "busFactor": "4",
+        "contributors": "26",
+        "stars": 17,
+        "docsScore": "3/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 2
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 8
+          },
+          {
+            "date": "2026-03",
+            "value": 3
+          },
+          {
+            "date": "2026-04",
+            "value": 5
+          },
+          {
+            "date": "2026-05",
+            "value": 7
+          },
+          {
+            "date": "2026-06",
+            "value": 2
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "27"
+      },
+      "detail": {
+        "demographics": {
+          "total": "25",
+          "secondary": "core 8 (80 % of 959 commits) · recent arrivals 0 (last 90 d) · dormant 24 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 8,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 17,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "22",
+        "forks": 26,
+        "license": "Other",
+        "dependencies": "8",
+        "prReview": {
+          "closureRatio": "100%",
+          "reviews": "31"
+        }
+      }
+    },
+    {
+      "slug": "isee-isee",
+      "owner": "iSEE",
+      "repo": "iSEE",
+      "githubUrl": "https://github.com/iSEE/iSEE",
+      "metrics": {
+        "busFactor": "2",
+        "contributors": "35",
+        "stars": 230,
+        "docsScore": "4/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 2
+          },
+          {
+            "date": "2025-11",
+            "value": 2
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 1
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 2
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 3
+          },
+          {
+            "date": "2026-07",
+            "value": 11
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "21"
+      },
+      "detail": {
+        "demographics": {
+          "total": "16",
+          "secondary": "core 2 (80 % of 3614 commits) · recent arrivals 0 (last 90 d) · dormant 12 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 2,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 4,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 10,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "33",
+        "forks": 44,
+        "license": "Other",
+        "dependencies": "0",
+        "prReview": {
+          "closureRatio": "100%",
+          "reviews": "24"
+        }
+      }
+    },
+    {
+      "slug": "immcore-is-cellr",
+      "owner": "immcore",
+      "repo": "iS-CellR",
+      "githubUrl": "https://github.com/immcore/iS-CellR",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "1",
+        "stars": 24,
+        "docsScore": "2/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "0"
+      },
+      "detail": {
+        "demographics": {
+          "total": "1",
+          "secondary": "core 1 (80 % of 49 commits) · recent arrivals 0 (last 90 d) · dormant 1 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 1,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 0,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "2",
+        "forks": 6,
+        "license": "GNU General Public License v3.0",
+        "dependencies": "0",
+        "prReview": null
+      }
+    },
+    {
+      "slug": "romanhaa-cerebro",
+      "owner": "romanhaa",
+      "repo": "Cerebro",
+      "githubUrl": "https://github.com/romanhaa/Cerebro",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "4",
+        "stars": 99,
+        "docsScore": "2/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "0"
+      },
+      "detail": {
+        "demographics": {
+          "total": "4",
+          "secondary": "core 1 (80 % of 242 commits) · recent arrivals 0 (last 90 d) · dormant 4 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 1,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 3,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "3",
+        "forks": 21,
+        "license": "MIT License",
+        "dependencies": "0",
+        "prReview": {
+          "closureRatio": "50%",
+          "reviews": "0"
+        }
+      }
+    },
+    {
+      "slug": "euxhenh-cellar",
+      "owner": "euxhenh",
+      "repo": "cellar",
+      "githubUrl": "https://github.com/euxhenh/cellar",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "2",
+        "stars": 35,
+        "docsScore": "4/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "0"
+      },
+      "detail": {
+        "demographics": {
+          "total": "2",
+          "secondary": "core 1 (80 % of 217 commits) · recent arrivals 0 (last 90 d) · dormant 2 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 1,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 1,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "3",
+        "forks": 6,
+        "license": "MIT License",
+        "dependencies": "22",
+        "prReview": {
+          "closureRatio": "100%",
+          "reviews": "0"
+        }
+      }
+    },
+    {
+      "slug": "monashbioinformaticsplatform-shinycellmodular",
+      "owner": "MonashBioinformaticsPlatform",
+      "repo": "ShinyCellModular",
+      "githubUrl": "https://github.com/MonashBioinformaticsPlatform/ShinyCellModular",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "4",
+        "stars": 3,
+        "docsScore": "3/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 0
+          },
+          {
+            "date": "2025-11",
+            "value": 2
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 15
+          },
+          {
+            "date": "2026-03",
+            "value": 12
+          },
+          {
+            "date": "2026-04",
+            "value": 16
+          },
+          {
+            "date": "2026-05",
+            "value": 16
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 75
+          },
+          {
+            "date": "2026-08",
+            "value": 10
+          }
+        ],
+        "commitsTotal": "146"
+      },
+      "detail": {
+        "demographics": {
+          "total": "2",
+          "secondary": "core 2 (80 % of 146 commits) · recent arrivals 0 (last 90 d) · dormant 0 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 2,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 0,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "5",
+        "forks": 1,
+        "license": "Other",
+        "dependencies": "0",
+        "prReview": {
+          "closureRatio": "100%",
+          "reviews": "0"
+        }
+      }
+    },
+    {
+      "slug": "longrw-omnicellx",
+      "owner": "longrw",
+      "repo": "OmniCellX",
+      "githubUrl": "https://github.com/longrw/OmniCellX",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "2",
+        "stars": 3,
+        "docsScore": "2/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 0
+          },
+          {
+            "date": "2025-10",
+            "value": 3
+          },
+          {
+            "date": "2025-11",
+            "value": 0
+          },
+          {
+            "date": "2025-12",
+            "value": 0
+          },
+          {
+            "date": "2026-01",
+            "value": 0
+          },
+          {
+            "date": "2026-02",
+            "value": 0
+          },
+          {
+            "date": "2026-03",
+            "value": 0
+          },
+          {
+            "date": "2026-04",
+            "value": 0
+          },
+          {
+            "date": "2026-05",
+            "value": 0
+          },
+          {
+            "date": "2026-06",
+            "value": 0
+          },
+          {
+            "date": "2026-07",
+            "value": 0
+          },
+          {
+            "date": "2026-08",
+            "value": 0
+          }
+        ],
+        "commitsTotal": "3"
+      },
+      "detail": {
+        "demographics": {
+          "total": "2",
+          "secondary": "core 1 (80 % of 37 commits) · recent arrivals 0 (last 90 d) · dormant 2 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 1,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 0,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 1,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "2",
+        "forks": 0,
+        "license": "MIT License",
+        "dependencies": "0",
+        "prReview": null
+      }
+    },
+    {
+      "slug": "taylor-ccb-group-mdv",
+      "owner": "Taylor-CCB-Group",
+      "repo": "MDV",
+      "githubUrl": "https://github.com/Taylor-CCB-Group/MDV",
+      "metrics": {
+        "busFactor": "1",
+        "contributors": "21",
+        "stars": 38,
+        "docsScore": "3/4",
+        "commitSparkline": [
+          {
+            "date": "2025-09",
+            "value": 54
+          },
+          {
+            "date": "2025-10",
+            "value": 53
+          },
+          {
+            "date": "2025-11",
+            "value": 43
+          },
+          {
+            "date": "2025-12",
+            "value": 43
+          },
+          {
+            "date": "2026-01",
+            "value": 40
+          },
+          {
+            "date": "2026-02",
+            "value": 58
+          },
+          {
+            "date": "2026-03",
+            "value": 77
+          },
+          {
+            "date": "2026-04",
+            "value": 79
+          },
+          {
+            "date": "2026-05",
+            "value": 70
+          },
+          {
+            "date": "2026-06",
+            "value": 128
+          },
+          {
+            "date": "2026-07",
+            "value": 59
+          },
+          {
+            "date": "2026-08",
+            "value": 44
+          }
+        ],
+        "commitsTotal": "766"
+      },
+      "detail": {
+        "demographics": {
+          "total": "20",
+          "secondary": "core 5 (80 % of 4435 commits) · recent arrivals 0 (last 90 d) · dormant 10 (no commit in 180 d)",
+          "segments": [
+            {
+              "label": "core",
+              "value": 5,
+              "tone": "good"
+            },
+            {
+              "label": "active",
+              "value": 8,
+              "tone": "info"
+            },
+            {
+              "label": "recent",
+              "value": 0,
+              "tone": "warn"
+            },
+            {
+              "label": "dormant",
+              "value": 7,
+              "tone": "danger"
+            }
+          ]
+        },
+        "committers": "17",
+        "forks": 9,
+        "license": "GNU General Public License v3.0",
+        "dependencies": "291",
+        "prReview": {
+          "closureRatio": "96%",
+          "reviews": "217"
+        }
+      }
+    }
+  ]
+}
