@@ -48,10 +48,42 @@ Shortlist (user-provided, 27 entries → 24 in scope after recon):
 | Dimension | Extras |
 |---|---|
 | Sustainability/health | Contributor pool breakdown — core / recent / dormant (`project_demographics`, stacked bar) |
-| Community activity | Committers, last 90 days (`committers`) |
+| Community activity | Committers, last 90 days (`committers`); occasional contributors, ≤4 commits (`occasional_contributors`) |
 | Popularity/adoption | Forks |
 | Quality/maturity | License (`license_coverage` + SPDX id), upstream dependency count (`upstream_dependencies`) |
-| Recent development activity | PR closure ratio / review count (`closure_ratio`, `cr_reviews`) — shown only for the 12/16 repos with PR-tracker coverage; omitted (not dashed) for the other 4 |
+| Recent development activity | Commit rhythm (`burstiness`); code churn (`code_lines`, see caveat below); PR closure ratio / review count / median time to close / self-merge rate (`closure_ratio`, `cr_reviews`, `pr_time_to_close`, `self_merge`) — shown only for the 12/16 repos with PR-tracker coverage; omitted (not dashed) for the other 4 |
+
+**Advanced-metric addition (post-launch, verified live against all 16 well-covered repos across the
+full 35-metric CHAOSS catalogue — featured + advanced):**
+
+- `burstiness` (16/16, real spread −1…+1) — Goh–Barabási commit-rhythm index; complements the
+  monthly sparkline with a steady-vs-bursty read.
+- `occasional_contributors` (16/16, real spread 0–55%) — share of contributors with ≤4 commits;
+  complements bus factor / demographics with an openness-to-drive-by-contribution signal.
+- `pr_time_to_close` (12/16, same PR-tracker subset as `closure_ratio`) — median days a PR stays
+  open; pairs with the existing closure ratio.
+- `self_merge` (11/16, same PR-tracker subset, one repo undefined with 0 merged PRs) — share of
+  merged PRs the author merged themselves; a review-culture signal, real spread 0–100%.
+- `code_lines` (16/16, real spread) — total line churn (added + removed). **Caveat:** a few repos
+  (`romanhaa/Cerebro`, `biolab/orange3-single-cell`) show implausible lines-per-commit averages
+  (tens of thousands), almost certainly from vendored/data files bundled into single commits, not
+  hand-written code. Shown with an explicit disclaimer on the tool-detail card rather than
+  silently treated as a clean signal.
+
+**Checked and dropped in the same pass** (technically returned a value on most/all of the 16, but
+uninformative or redundant):
+
+- `licenses_declared` — flat `✗` (no) on all 16, contradicting `license_coverage` (already shown),
+  which correctly reports MIT etc. for most. Looks like a data-quality quirk on this specific
+  metric for this tool category, not a real "no license" signal.
+- `technical_fork` — flat (`0` on 15/16, `1` on iSEE only). This is the Neo4j *in-graph* fork
+  count, not the real GitHub fork count already shown from SPARQL — uninformative on its own.
+- `bot_activity` — nearly flat (`0%` on 13/16, low single digits on the rest) — too little
+  variance to be worth a card.
+- `cr_accepted` / `cr_declined` — redundant with the "merged vs declined" split already surfaced
+  in `closure_ratio`'s secondary text, and risky as standalone numbers: the 4 repos without
+  PR-tracker coverage silently report `0` instead of `—`, which would misrepresent "no data" as
+  "zero merges" if shown directly.
 
 ## Data reconnaissance
 
@@ -76,7 +108,9 @@ stars/forks instead), `release_frequency` (0/16), `test_coverage` (0/16),
 `new_contributors` (near-duplicate of `contributors` — window-handling quirk, not real signal),
 `inactive_contributors` (flat 0 across all 16 — uninformative), all issue-response metrics
 (`first_response`, `issue_response_time`, `issue_resolution`, `issues_*` — 0/25 issue-tracker
-coverage for this shortlist).
+coverage for this shortlist). A second pass (see *Advanced-metric addition* below) found five
+more usable advanced metrics and four more that technically return a value but are flat or
+redundant (`licenses_declared`, `technical_fork`, `bot_activity`, `cr_accepted`/`cr_declined`).
 
 **Known caveats to carry into the Methodology page:**
 - `chanzuckerberg/cellxgene` is excluded from the entire comparison (not shown, not mentioned)

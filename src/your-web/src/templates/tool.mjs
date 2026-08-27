@@ -34,12 +34,29 @@ function demographicsBar(demographics) {
 export function toolBody(tool) {
 	const { owner, repo, githubUrl, metrics, detail } = tool;
 
-	const prSection = detail.prReview
-		? `<div class="op-flex-between">
-        <div><div class="value" style="font-family:var(--op-font-heading);font-size:24px;font-weight:700;color:var(--op-text)">${fmt(detail.prReview.closureRatio)}</div><div class="op-caption muted uppercase">PR closure ratio (30d)</div></div>
-        <div><div class="value" style="font-family:var(--op-font-heading);font-size:24px;font-weight:700;color:var(--op-text)">${fmt(detail.prReview.reviews)}</div><div class="op-caption muted uppercase">Reviewed PRs (30d)</div></div>
-      </div>`
-		: `<p class="op-sm muted">Not computable — this repo isn't covered by Open Pulse's GitHub pull-request tracker yet (12 of 16 tools are). Absence here does not mean no PR activity.</p>`;
+	function statTile(value, label) {
+		return `<div><div class="value" style="font-family:var(--op-font-heading);font-size:24px;font-weight:700;color:var(--op-text)">${fmt(value)}</div><div class="op-caption muted uppercase">${escapeHtml(label)}</div></div>`;
+	}
+
+	// One shared stat row for every "recent development activity" number —
+	// burstiness and code churn are always available (16/16), the four
+	// PR-based ones only for repos with pull-request-tracker coverage.
+	const activityTiles = [
+		detail.burstiness ? statTile(detail.burstiness.value, 'Commit rhythm (burstiness)') : '',
+		detail.codeLines ? statTile(detail.codeLines.value, 'Lines changed (lifetime)') : '',
+		...(detail.prReview
+			? [
+					statTile(detail.prReview.closureRatio, 'PR closure ratio (30d)'),
+					statTile(detail.prReview.reviews, 'Reviewed PRs (30d)'),
+					statTile(detail.prReview.timeToClose, 'Median time to close'),
+					statTile(detail.prReview.selfMerge, 'Self-merge rate'),
+			  ]
+			: []),
+	].join('');
+
+	const prNote = detail.prReview
+		? ''
+		: `<p class="op-sm muted" style="margin-top:12px">Not computable — this repo isn't covered by Open Pulse's GitHub pull-request tracker yet (12 of 16 tools are). Absence here does not mean no PR activity.</p>`;
 
 	return `<div class="op-section">
     <div class="op-label"><span class="ring">〇</span> TOOL DETAIL</div>
@@ -84,9 +101,16 @@ export function toolBody(tool) {
         ${fmt(detail.committers)} landed commits in the last 90 days (a narrower measure —
         it excludes authors whose commits were merged in by someone else).
       </p>
+      ${detail.occasionalContributors
+					? `<p class="op-sm muted" style="margin-top:8px">
+        ${fmt(detail.occasionalContributors.value)} of them are occasional contributors — people with
+        4 or fewer commits${detail.occasionalContributors.secondary ? ` (${escapeHtml(detail.occasionalContributors.secondary)})` : ''}.
+        A rough read on how open the project is to drive-by contributions versus a fixed core.
+      </p>`
+					: ''}
       ${provenance({
 				source: 'OpenSearch (GrimoireLab commit index)',
-				method: 'CHAOSS metrics API — Contributors, Committers',
+				method: 'CHAOSS metrics API — Contributors, Committers, Occasional Contributors',
 				refresh: 'Live-computed per request; underlying index refreshed on the hub’s crawl cadence',
 				caveats: 'Counts identities Open Pulse could resolve from commit authorship; the same person under multiple aliases may be undercounted.',
 			})}
@@ -129,12 +153,26 @@ export function toolBody(tool) {
       <h3>Recent development activity</h3>
       <div style="margin-top:12px">${sparklineSvg(metrics.commitSparkline, { width: 480, height: 64 })}</div>
       <p class="op-sm muted" style="margin-top:8px">${fmt(metrics.commitsTotal)} commits in the last 12 months.</p>
-      <div style="margin-top:16px">${prSection}</div>
+      <div class="op-flex-between" style="margin-top:16px">${activityTiles}</div>
+      ${prNote}
+      ${detail.burstiness?.secondary
+				? `<p class="op-caption muted" style="margin-top:16px">
+        Burstiness: ${escapeHtml(detail.burstiness.secondary)}. Near 0 reads as steady/random, positive
+        values trend bursty, negative values trend periodic.
+      </p>`
+				: ''}
+      ${detail.codeLines?.secondary
+				? `<p class="op-caption muted" style="margin-top:4px">
+        Lines changed: ${escapeHtml(detail.codeLines.secondary)}. <strong>Caveat:</strong> a handful of
+        large data or vendored-file commits can inflate this figure well beyond hand-written code churn —
+        read it as a rough activity-volume signal, not a codebase-quality measure.
+      </p>`
+				: ''}
       ${provenance({
 				source: 'OpenSearch (GrimoireLab commit + pull-request indices)',
-				method: 'CHAOSS metrics API — Activity Dates and Times, Change Request Closure Ratio, Change Request Reviews',
+				method: 'CHAOSS metrics API — Activity Dates and Times, Burstiness, Code Changes Lines, Change Request Closure Ratio, Change Request Reviews, Time to Close, Self Merge Rate',
 				refresh: 'Live-computed per request; underlying index refreshed on the hub’s crawl cadence',
-				caveats: 'PR-based metrics require this repo to be covered by Open Pulse’s GitHub pull-request tracker (12 of the 16 compared tools are, as of this build).',
+				caveats: 'PR-based metrics (closure ratio, reviews, time to close, self-merge rate) require this repo to be covered by Open Pulse’s GitHub pull-request tracker (12 of the 16 compared tools are, as of this build). Code Changes Lines counts raw line churn and can be skewed by large non-code commits (vendored assets, generated or data files) — treat it as an activity-volume signal, not a measure of hand-written code.',
 			})}
     </div>
   </div>`;
