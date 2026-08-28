@@ -1,4 +1,4 @@
-import { fmt, sparklineSvg, docsScoreFraction } from './helpers.mjs';
+import { fmt, activityOrNone, docsScoreFraction } from './helpers.mjs';
 
 export function compareBody({ tools, coverageCount }) {
 	const sorted = [...tools].sort((a, b) => a.repo.localeCompare(b.repo));
@@ -21,7 +21,7 @@ export function compareBody({ tools, coverageCount }) {
           <td class="num">${fmt(t.metrics.contributors)}</td>
           <td class="num">${fmt(t.metrics.stars)}</td>
           <td class="num">${fmt(t.metrics.docsScore)}</td>
-          <td class="sparkline-cell">${sparklineSvg(t.metrics.commitSparkline)}</td>
+          <td class="sparkline-cell">${activityOrNone(t.metrics.commitSparkline)}</td>
         </tr>`;
 		})
 		.join('\n');
@@ -41,7 +41,7 @@ export function compareBody({ tools, coverageCount }) {
         <thead>
           <tr>
             <th>Tool</th>
-            <th data-sort="busfactor" title="Fewest contributors covering ≥50% of commits — higher means less concentrated, more resilient">Bus factor</th>
+            <th data-sort="busfactor" title="Fewest contributors covering ≥50% of commits in the last 12 months — higher means less concentrated, more resilient">Bus factor</th>
             <th data-sort="contributors" title="Distinct people who committed in the last 12 months">Contributors (12mo)</th>
             <th data-sort="stars" title="GitHub stars, freshest available source">Stars</th>
             <th data-sort="docs" title="README / homepage / wiki / GitHub Pages signals present, out of 4">Docs score</th>

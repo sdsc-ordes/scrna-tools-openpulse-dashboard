@@ -36,16 +36,44 @@ export function sparklineSvg(series, { width = 130, height = 34 } = {}) {
   </svg>`;
 }
 
+// Wraps sparklineSvg with an explicit "No activity" state instead of a flat,
+// empty-looking chart — a genuinely quiet window should read as quiet, not
+// as a rendering glitch.
+export function activityOrNone(series, opts) {
+	const hasActivity = (series ?? []).some((p) => p.value > 0);
+	if (!hasActivity) return `<span class="op-sm muted">No activity</span>`;
+	return sparklineSvg(series, opts);
+}
+
+// A collapsed, scrollable list for "see all N" — dependency lists in
+// particular can run into the hundreds (MDV has 291), too many to show
+// inline. `urls` are full GitHub URLs; the visible label strips the host.
+export function disclosureList(summaryLabel, urls) {
+	if (!urls || !urls.length) return '';
+	const items = urls
+		.map((u) => `<li><a href="${escapeHtml(u)}">${escapeHtml(u.replace('https://github.com/', ''))}</a></li>`)
+		.join('');
+	return `<details class="op-disclosure">
+    <summary>${escapeHtml(summaryLabel)}</summary>
+    <ul class="op-disclosure-list">${items}</ul>
+  </details>`;
+}
+
 // Required shared component (frontend-dev §7): same four fixed fields on
 // every data card, never bespoke per-section text.
 export function provenance({ source, method, refresh, caveats }) {
+	// dt/dd must be direct children of the grid (see .op-provenance dl in
+	// main.css) — wrapping each pair in its own <div> made THAT div the grid
+	// item, so `max-content 1fr` columnized the four (label+value) pairs into
+	// a cramped 2x2 block instead of one label column beside one wide value
+	// column, and long values wrapped badly as a result.
 	return `<details class="op-provenance">
     <summary><span aria-hidden="true">ⓘ</span> How is this computed?</summary>
     <dl>
-      <div><dt>Source</dt><dd class="mono">${escapeHtml(source)}</dd></div>
-      <div><dt>Method</dt><dd class="mono">${escapeHtml(method)}</dd></div>
-      <div><dt>Refresh</dt><dd>${escapeHtml(refresh)}</dd></div>
-      <div><dt>Caveats</dt><dd>${escapeHtml(caveats)}</dd></div>
+      <dt>Source</dt><dd class="mono">${escapeHtml(source)}</dd>
+      <dt>Method</dt><dd class="mono">${escapeHtml(method)}</dd>
+      <dt>Refresh</dt><dd>${escapeHtml(refresh)}</dd>
+      <dt>Caveats</dt><dd>${escapeHtml(caveats)}</dd>
     </dl>
   </details>`;
 }
