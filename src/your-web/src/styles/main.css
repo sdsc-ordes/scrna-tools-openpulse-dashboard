@@ -399,7 +399,7 @@ a:hover {
 }
 .op-provenance dl {
 	display: grid;
-	grid-template-columns: max-content 1fr;
+	grid-template-columns: max-content minmax(0, 1fr);
 	gap: 6px 16px;
 	margin: 12px 0 0;
 }
@@ -414,6 +414,7 @@ a:hover {
 	font-size: 12px;
 	color: var(--op-text-muted);
 	margin: 0;
+	overflow-wrap: break-word;
 }
 
 /* --- Demographics stacked bar (bus-factor detail) ---------------------- */
@@ -443,6 +444,115 @@ a:hover {
 	border-radius: 2px;
 	margin-right: 6px;
 	vertical-align: -1px;
+}
+
+/* --- Contributor commit-share bars (bus-factor detail) ------------------ */
+
+.op-sharebar-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.op-sharebar-row {
+	display: grid;
+	grid-template-columns: 120px 1fr max-content;
+	align-items: center;
+	gap: 12px;
+	font-size: 12px;
+}
+.op-sharebar-label {
+	color: var(--op-text-2);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.op-sharebar-track {
+	display: block;
+	height: 8px;
+	border-radius: 4px;
+	background: var(--op-surface-2);
+	border: 1px solid var(--op-border-subtle);
+	overflow: hidden;
+}
+.op-sharebar-fill {
+	display: block;
+	height: 100%;
+	background: var(--op-blue-light);
+}
+.op-sharebar-value {
+	color: var(--op-text);
+	white-space: nowrap;
+}
+
+/* --- Monthly commits by contributor cohort (community activity) -------- */
+/* Full-lifespan histories can run 100+ months (see fetch-data.mjs) — columns
+ * have a fixed min-width and grow to fill short histories via flex-grow, but
+ * once there isn't room the container scrolls horizontally instead of
+ * squeezing bars into illegibility. */
+
+.op-cohort-bars {
+	display: flex;
+	align-items: flex-end;
+	gap: 2px;
+	height: 64px;
+	overflow-x: auto;
+	padding-bottom: 2px;
+}
+.op-cohort-col {
+	flex: 1 1 8px;
+	min-width: 8px;
+	height: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 1px;
+	background: var(--op-surface-2);
+	border-radius: 2px;
+	overflow: hidden;
+}
+.op-cohort-col > div {
+	width: 100%;
+}
+
+/* --- Expandable "see all N" lists (dependents/dependencies) ------------- */
+
+.op-disclosure {
+	margin-top: 12px;
+	font-size: 13px;
+}
+.op-disclosure summary {
+	cursor: pointer;
+	color: var(--op-blue-light);
+	list-style: none;
+}
+.op-disclosure summary::-webkit-details-marker {
+	display: none;
+}
+.op-disclosure summary:hover {
+	color: var(--op-blue);
+}
+.op-disclosure-list {
+	margin: 10px 0 0;
+	padding: 0;
+	list-style: none;
+	max-height: 240px;
+	overflow-y: auto;
+	border: 1px solid var(--op-border-subtle);
+	border-radius: 4px;
+}
+.op-disclosure-list li {
+	padding: 6px 10px;
+	border-bottom: 1px solid var(--op-border-subtle);
+	font-family: var(--op-font-mono);
+	font-size: 12px;
+}
+.op-disclosure-list li:last-child {
+	border-bottom: none;
+}
+.op-disclosure-list li a {
+	color: var(--op-text-2);
+}
+.op-disclosure-list li a:hover {
+	color: var(--op-blue-light);
 }
 
 /* --- Not-yet-indexed coverage panel ------------------------------------- */
@@ -506,7 +616,12 @@ a:hover {
 
 .op-grid-2 {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	/* minmax(0, ...) not bare fr units: a grid track defaults to a min-width
+	 * of its content's intrinsic size, so a wide child (e.g. the full-lifespan
+	 * cohort histogram, 100+ columns for some repos) would otherwise force
+	 * the whole track — and the page — to overflow horizontally instead of
+	 * scrolling inside its own container. */
+	grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 	gap: 24px;
 }
 @media (max-width: 800px) {
